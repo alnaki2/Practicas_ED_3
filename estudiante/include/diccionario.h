@@ -161,7 +161,12 @@ public:
 
     iterator end();
 
-    const_iterator begin();
+    const_iterator begin(){
+       iterator it;
+       it = begin();
+       return it;   
+      
+    }
 
     const_iterator end();
 
