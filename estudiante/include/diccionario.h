@@ -71,8 +71,37 @@ public:
     Diccionario<T, U> & operator=(const Diccionario<T, U> &D);
 
     class iterator{
-        //Completar el iterador
+        
+        private:
+            typename list<data<T,U> >::iterator it;
+        public:
+            iterator();
+            iterator & operator++(){
+                ++it;
+                return *this;
+            }
+            iterator operator++(int a){
+                iterator aux = *this;
+                ++it;
+                return aux;
 
+            }
+            iterator & operator--(){
+                --it;
+                return *this;
+            }
+            iterator operator--(int){
+                iterator aux = *this;
+                --it;
+                return aux;
+            }
+            data<T,U> & operator*();
+            bool operator==(const iterator &i) const{
+                return it == i.it;
+            }
+            bool operator!=(const iterator &i) const{
+                return it != i.it;
+            }
 
     };
     class const_iterator{
@@ -186,5 +215,8 @@ public:
     }
 
 };
+
+template <class T, class U>
+Diccionario<T,U>::iterator::iterator(const Diccionario<T,U> &D):datos(D.datos){}
 
 #endif

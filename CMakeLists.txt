@@ -47,7 +47,7 @@ if (EXISTS ${CMAKE_SOURCE_DIR}/${BASE_FOLDER}/src/apariciones.cpp)
     ${BASE_FOLDER}/src/dictionary.cpp)
 endif()
 # check if Doxygen is installed
-find_package(Doxygen REQUIRED)
+find_package(Doxygen)
 if (DOXYGEN_FOUND)
     # set input and output files
     set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
@@ -64,5 +64,5 @@ if (DOXYGEN_FOUND)
             COMMENT "Generating API documentation with Doxygen"
             VERBATIM )
 else (DOXYGEN_FOUND)
-    message("Doxygen need to be installed to generate the doxygen documentation")
+    message(STATUS "Doxygen not found; API documentation will not be generated")
 endif (DOXYGEN_FOUND)
