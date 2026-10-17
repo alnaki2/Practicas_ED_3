@@ -157,18 +157,33 @@ public:
 
     /** Funciones begin y end para los iteradores**/
 
-    iterator begin();
-
-    iterator end();
-
-    const_iterator begin(){
+    iterator begin(){
+      
        iterator it;
-       it = begin();
+       it = datos.begin();
+       return it;
+
+    }
+
+    iterator end(){
+        
+       iterator it;
+       it = datos.end();
+       return it;
+    }
+
+    const_iterator begin () const{
+       const_iterator it;
+       it = datos.begin();
        return it;   
       
     }
 
-    const_iterator end();
+    const_iterator end() const{
+       const_iterator it;
+       it = datos.end();
+       return it;
+    }
 
 };
 
